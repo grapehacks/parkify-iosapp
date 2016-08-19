@@ -214,6 +214,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomBarView" destination="Myc-W2-HwH" id="BPf-jE-1nU"/>
                         <outlet property="topBarView" destination="0eB-KI-bTN" id="WHy-gi-UZT"/>
