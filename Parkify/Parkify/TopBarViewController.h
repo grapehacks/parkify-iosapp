@@ -10,4 +10,9 @@
 
 @interface TopBarViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *winnersButton;
+@property (strong, nonatomic) IBOutlet UIButton *personButton;
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
+@property (strong, nonatomic) IBOutlet UILabel *counterLabel;
+
 @end

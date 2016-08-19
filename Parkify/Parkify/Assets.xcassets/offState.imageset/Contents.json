@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "info.png",
+      "filename" : "offState.png",
       "scale" : "1x"
     },
     {

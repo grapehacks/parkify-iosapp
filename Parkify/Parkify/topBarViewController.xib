@@ -7,7 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopBarViewController">
             <connections>
+                <outlet property="counterLabel" destination="5O0-2e-QPD" id="FDu-Zx-9iE"/>
+                <outlet property="infoButton" destination="uKG-uh-ma8" id="Eie-d2-ch0"/>
+                <outlet property="personButton" destination="tle-26-Gei" id="tZ0-x0-zeb"/>
                 <outlet property="view" destination="iN0-l3-epB" id="utX-nU-8ga"/>
+                <outlet property="winnersButton" destination="GK5-sx-hY4" id="g84-yR-1fb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
