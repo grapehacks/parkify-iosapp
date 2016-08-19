@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ogk-RG-0gH">
+                                <rect key="frame" x="25" y="41" width="550" height="328"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XNZ-Pf-YRq">
+                                <rect key="frame" x="261" y="252" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grape-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dN8-gX-Nc1">
+                                <rect key="frame" x="270" y="572" width="180" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="W0x-1r-HJf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="powerdby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APo-NG-ubg">
+                                <rect key="frame" x="222" y="571" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M38-HS-XLW">
+                                <rect key="frame" x="277" y="500" width="46" height="30"/>
+                                <state key="normal" title="login"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z0I-bU-fwP">
+                                <rect key="frame" x="245" y="214" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dN8-gX-Nc1" secondAttribute="bottom" constant="8" id="0BI-Va-GX2"/>
+                            <constraint firstItem="XNZ-Pf-YRq" firstAttribute="top" secondItem="z0I-bU-fwP" secondAttribute="bottom" constant="94" id="EFA-Ub-J4E">
+                                <variation key="heightClass=regular" constant="15"/>
+                            </constraint>
+                            <constraint firstItem="M38-HS-XLW" firstAttribute="top" secondItem="XNZ-Pf-YRq" secondAttribute="bottom" constant="20" id="K6X-cR-Oa3">
+                                <variation key="heightClass=regular" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="Ogk-RG-0gH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="L7z-B2-Q15"/>
+                            <constraint firstItem="dN8-gX-Nc1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="60" id="Qjt-Uq-weK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="APo-NG-ubg" secondAttribute="bottom" constant="8" id="SNO-Im-ebA"/>
+                            <constraint firstItem="Ogk-RG-0gH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="VAL-dl-btP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ogk-RG-0gH" secondAttribute="trailing" constant="5" id="ZSh-V8-UaO"/>
+                            <constraint firstItem="z0I-bU-fwP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aNW-BB-mmm"/>
+                            <constraint firstItem="z0I-bU-fwP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cta-Xx-mJS"/>
+                            <constraint firstItem="M38-HS-XLW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jQK-Cd-4xK"/>
+                            <constraint firstItem="APo-NG-ubg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-40" id="qYF-Zj-LwL"/>
+                            <constraint firstItem="XNZ-Pf-YRq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rAF-dv-dyv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aNW-BB-mmm"/>
+                                <exclude reference="cta-Xx-mJS"/>
+                                <exclude reference="EFA-Ub-J4E"/>
+                                <exclude reference="rAF-dv-dyv"/>
+                                <exclude reference="K6X-cR-Oa3"/>
+                                <exclude reference="jQK-Cd-4xK"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="aNW-BB-mmm"/>
+                                <include reference="cta-Xx-mJS"/>
+                                <include reference="EFA-Ub-J4E"/>
+                                <include reference="rAF-dv-dyv"/>
+                                <include reference="K6X-cR-Oa3"/>
+                                <include reference="jQK-Cd-4xK"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="386" y="178"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="grape-logo" width="180" height="34"/>
+        <image name="logo" width="607" height="328"/>
+    </resources>
 </document>
