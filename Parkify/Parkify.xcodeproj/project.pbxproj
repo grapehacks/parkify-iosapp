@@ -14,9 +14,12 @@
 		7DB06D4D1D67787F00164215 /* Parkify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DB06D4B1D67787F00164215 /* Parkify.xcdatamodeld */; };
 		7DB06D4F1D67787F00164215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB06D4E1D67787F00164215 /* Assets.xcassets */; };
 		7DB06D521D67787F00164215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB06D501D67787F00164215 /* LaunchScreen.storyboard */; };
+		9C599C939FF75DD8C6FFBCED /* Pods_Parkify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FBEBFCAB0929FDDB9A56A5 /* Pods_Parkify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DE58DA692A0EF2F040ED0E4 /* Pods-Parkify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parkify/Pods-Parkify.debug.xcconfig"; sourceTree = "<group>"; };
+		44FBEBFCAB0929FDDB9A56A5 /* Pods_Parkify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parkify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB06D3C1D67787F00164215 /* Parkify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parkify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB06D401D67787F00164215 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7DB06D421D67787F00164215 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		7DB06D4E1D67787F00164215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB06D511D67787F00164215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB06D531D67787F00164215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C982519C928745C3DDD3799E /* Pods-Parkify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parkify/Pods-Parkify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C599C939FF75DD8C6FFBCED /* Pods_Parkify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FBB50632511FA6AA0CA56ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DE58DA692A0EF2F040ED0E4 /* Pods-Parkify.debug.xcconfig */,
+				C982519C928745C3DDD3799E /* Pods-Parkify.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7DB06D331D67787F00164215 = {
 			isa = PBXGroup;
 			children = (
 				7DB06D3E1D67787F00164215 /* Parkify */,
 				7DB06D3D1D67787F00164215 /* Products */,
+				0FBB50632511FA6AA0CA56ED /* Pods */,
+				C0AA3136593935143626DCDF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +98,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C0AA3136593935143626DCDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44FBEBFCAB0929FDDB9A56A5 /* Pods_Parkify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DB06D561D67787F00164215 /* Build configuration list for PBXNativeTarget "Parkify" */;
 			buildPhases = (
+				F4418AF354DE77FA27627618 /* Check Pods Manifest.lock */,
 				7DB06D381D67787F00164215 /* Sources */,
 				7DB06D391D67787F00164215 /* Frameworks */,
 				7DB06D3A1D67787F00164215 /* Resources */,
+				684BFF566451FD2D19404369 /* Embed Pods Frameworks */,
+				08D8FE2E925C5AC637BC6256 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08D8FE2E925C5AC637BC6256 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Parkify/Pods-Parkify-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		684BFF566451FD2D19404369 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Parkify/Pods-Parkify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4418AF354DE77FA27627618 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DB06D381D67787F00164215 /* Sources */ = {
@@ -265,6 +340,7 @@
 		};
 		7DB06D571D67787F00164215 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DE58DA692A0EF2F040ED0E4 /* Pods-Parkify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Parkify/Info.plist;
@@ -276,6 +352,7 @@
 		};
 		7DB06D581D67787F00164215 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C982519C928745C3DDD3799E /* Pods-Parkify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Parkify/Info.plist;
@@ -304,6 +381,7 @@
 				7DB06D581D67787F00164215 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
