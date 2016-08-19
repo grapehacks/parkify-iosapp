@@ -14,6 +14,7 @@
 		7DB06D4D1D67787F00164215 /* Parkify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DB06D4B1D67787F00164215 /* Parkify.xcdatamodeld */; };
 		7DB06D4F1D67787F00164215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB06D4E1D67787F00164215 /* Assets.xcassets */; };
 		7DB06D521D67787F00164215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB06D501D67787F00164215 /* LaunchScreen.storyboard */; };
+		8499DE151D679DE0007BD4EA /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8499DE141D679DE0007BD4EA /* footer.xib */; };
 		9C599C939FF75DD8C6FFBCED /* Pods_Parkify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FBEBFCAB0929FDDB9A56A5 /* Pods_Parkify.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		7DB06D4E1D67787F00164215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB06D511D67787F00164215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB06D531D67787F00164215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8499DE141D679DE0007BD4EA /* footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		C982519C928745C3DDD3799E /* Pods-Parkify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parkify/Pods-Parkify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				7DB06D451D67787F00164215 /* ViewController.h */,
 				7DB06D461D67787F00164215 /* ViewController.m */,
 				7DB06D481D67787F00164215 /* Main.storyboard */,
+				8499DE141D679DE0007BD4EA /* footer.xib */,
 				7DB06D4E1D67787F00164215 /* Assets.xcassets */,
 				7DB06D501D67787F00164215 /* LaunchScreen.storyboard */,
 				7DB06D531D67787F00164215 /* Info.plist */,
@@ -168,6 +171,7 @@
 			files = (
 				7DB06D521D67787F00164215 /* LaunchScreen.storyboard in Resources */,
 				7DB06D4F1D67787F00164215 /* Assets.xcassets in Resources */,
+				8499DE151D679DE0007BD4EA /* footer.xib in Resources */,
 				7DB06D4A1D67787F00164215 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

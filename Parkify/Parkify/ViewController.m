@@ -9,19 +9,31 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UIView *footerView;
 
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
-  [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
+    [super viewDidLoad];
+    
+    UIView *containerView = [[[NSBundle mainBundle] loadNibNamed:@"footer" owner:self options:nil] lastObject];
+    [self.footerView addSubview:containerView];
+    
+    [containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.footerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    NSDictionary *views = @{@"container" : containerView};
+    
+    [self.footerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[container]-|" options:0 metrics:nil views:views]];
+    [self.footerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[container]-|" options:0 metrics:nil views:views]];
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end
