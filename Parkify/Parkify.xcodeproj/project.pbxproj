@@ -16,6 +16,7 @@
 		7DB06D521D67787F00164215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB06D501D67787F00164215 /* LaunchScreen.storyboard */; };
 		7DB06D5C1D678DBB00164215 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB06D5B1D678DBB00164215 /* Card.m */; };
 		7DF379451D67937C0021FBC3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF379441D67937C0021FBC3 /* User.m */; };
+		7DF379481D67983A0021FBC3 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF379471D67983A0021FBC3 /* Message.m */; };
 		9C599C939FF75DD8C6FFBCED /* Pods_Parkify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FBEBFCAB0929FDDB9A56A5 /* Pods_Parkify.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,8 @@
 		7DB06D5B1D678DBB00164215 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		7DF379431D67937C0021FBC3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		7DF379441D67937C0021FBC3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		7DF379461D67983A0021FBC3 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		7DF379471D67983A0021FBC3 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		C982519C928745C3DDD3799E /* Pods-Parkify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parkify/Pods-Parkify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +115,8 @@
 				7DB06D5B1D678DBB00164215 /* Card.m */,
 				7DF379431D67937C0021FBC3 /* User.h */,
 				7DF379441D67937C0021FBC3 /* User.m */,
+				7DF379461D67983A0021FBC3 /* Message.h */,
+				7DF379471D67983A0021FBC3 /* Message.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				7DB06D5C1D678DBB00164215 /* Card.m in Sources */,
 				7DB06D471D67787F00164215 /* ViewController.m in Sources */,
 				7DF379451D67937C0021FBC3 /* User.m in Sources */,
+				7DF379481D67983A0021FBC3 /* Message.m in Sources */,
 				7DB06D441D67787F00164215 /* AppDelegate.m in Sources */,
 				7DB06D4D1D67787F00164215 /* Parkify.xcdatamodeld in Sources */,
 				7DB06D411D67787F00164215 /* main.m in Sources */,
