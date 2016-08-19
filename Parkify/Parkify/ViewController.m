@@ -10,7 +10,6 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIView *footerView;
-
 @end
 
 @implementation ViewController
