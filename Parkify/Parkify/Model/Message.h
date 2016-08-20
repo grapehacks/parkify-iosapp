@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger, MessageType) {
 };
 
 @interface Message : NSObject
+@property (nonatomic, strong) NSString *messageId;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *topic;
 @property (nonatomic, assign) MessageType type;

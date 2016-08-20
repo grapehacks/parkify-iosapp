@@ -9,7 +9,6 @@
 #import "JSONParser.h"
 
 // model objects class
-#import "Message.h"
 #import "Card.h"
 #import "Draw.h"
 #import "History.h"
@@ -53,6 +52,7 @@
 
 - (Message *)messageFromDictionary:(NSDictionary *)jsonDictionary {
   Message *message = [Message new];
+  message.messageId = jsonDictionary[@"_id"];
   message.text = jsonDictionary[@"text"];
   message.topic = jsonDictionary[@"topic"];
   message.type = [jsonDictionary[@"type"] integerValue];
