@@ -10,6 +10,7 @@
 #import "TopBarViewController.h"
 #import "MessagesViewController.h"
 #import "ConfirmationModalViewController.h"
+#import "AppDelegate.h"
 
 @interface MainUserViewController ()
 @property (strong, nonatomic) IBOutlet UIView *topBarView;
@@ -47,19 +48,35 @@
     
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[topBar]-|" options:0 metrics:nil views:views]];
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[topBar]-|" options:0 metrics:nil views:views]];
-    [self setupForUnregisteredUser];
+    
+    switch ([self participateMode]) {
+        case ParticipateModeDecline:
+        case ParticipateModeTentative:
+            [self setupForUnregisteredUser];
+        case ParticipateModeAccept:
+            [self setupForRegisteredUser];
+    }
+}
+
+- (ParticipateMode)participateMode {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return appDelegate.session.user.participate;
 }
 
 - (IBAction)registerUnregisterAction:(id)sender {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.confirmationModalViewController = [storyBoard instantiateViewControllerWithIdentifier:@"ConfirmationModalViewController"];
     self.confirmationModalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-//    [self.confirmationModalViewController registerConfirmation];
-    [self.confirmationModalViewController unregisterConfirmation];
+    
+    switch ([self participateMode]) {
+        case ParticipateModeDecline:
+        case ParticipateModeTentative:
+            [self.confirmationModalViewController registerConfirmation];
+        case ParticipateModeAccept:
+            [self.confirmationModalViewController unregisterConfirmation];
+    }
+    
     [self presentViewController:self.confirmationModalViewController animated:YES completion:NULL];
-    
-    
-    
 }
 
 - (void)setupForRegisteredUser {

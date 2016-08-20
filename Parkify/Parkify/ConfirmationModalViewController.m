@@ -37,6 +37,7 @@
 }
 
 - (IBAction)yesAction:(id)sender {
+    // connectionManarer
     //    self.confirmationSwitch.state
 }
 
