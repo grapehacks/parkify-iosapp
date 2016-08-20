@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MessageTableViewCell : UITableViewCell
+
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 

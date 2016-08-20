@@ -8,10 +8,16 @@
 
 #import "MainUserViewController.h"
 #import "TopBarViewController.h"
+#import "MessagesViewController.h"
 
 @interface MainUserViewController ()
 @property (strong, nonatomic) IBOutlet UIView *topBarView;
 @property (strong, nonatomic) IBOutlet UIView *bottomBarView;
+@property (strong, nonatomic) IBOutlet UIButton *enableButton;
+@property (strong, nonatomic) IBOutlet UIButton *refreshButton;
+@property (strong, nonatomic) IBOutlet UIButton *saveUnsaveButton;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+
 @property (strong, nonatomic) TopBarViewController *topBarViewController;
 @end
 
@@ -40,20 +46,5 @@
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[topBar]-|" options:0 metrics:nil views:views]];
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[topBar]-|" options:0 metrics:nil views:views]];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

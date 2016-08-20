@@ -37,7 +37,10 @@
                         <constraint firstAttribute="height" constant="50" id="UIG-v0-QBJ"/>
                         <constraint firstAttribute="width" constant="50" id="ZKH-vO-DHD"/>
                     </constraints>
-                    <state key="normal" title="Button" image="winners"/>
+                    <state key="normal" image="winners"/>
+                    <connections>
+                        <action selector="showMessages:" destination="-1" eventType="touchUpInside" id="C5p-42-QeX"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tle-26-Gei">
                     <rect key="frame" x="544" y="10" width="50" height="50"/>
@@ -45,7 +48,10 @@
                         <constraint firstAttribute="height" constant="50" id="7wg-Nu-4h2"/>
                         <constraint firstAttribute="width" constant="50" id="bBn-e9-wLW"/>
                     </constraints>
-                    <state key="normal" title="Button" image="boy"/>
+                    <state key="normal" image="boy"/>
+                    <connections>
+                        <action selector="personalAction:" destination="-1" eventType="touchUpInside" id="jO2-Re-SHB"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfV-mm-TXw">
                     <rect key="frame" x="604" y="8" width="50" height="50"/>
@@ -56,7 +62,10 @@
                                 <constraint firstAttribute="height" constant="31" id="Zyl-Yb-eWD"/>
                                 <constraint firstAttribute="width" constant="31" id="z7f-Vi-eYK"/>
                             </constraints>
-                            <state key="normal" title="Button" image="info"/>
+                            <state key="normal" image="info"/>
+                            <connections>
+                                <action selector="infoAction:" destination="-1" eventType="touchUpInside" id="c05-Ah-6i9"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZB-Lm-alv">
                             <rect key="frame" x="20" y="0.0" width="16" height="16"/>

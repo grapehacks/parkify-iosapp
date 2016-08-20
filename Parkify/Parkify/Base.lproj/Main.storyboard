@@ -243,9 +243,6 @@
                                         <include reference="gBI-fy-ERD"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="zOE-9x-CJN" kind="show" id="ti8-Ga-kk8"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23-08-2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HId-wF-nGD">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -294,7 +291,7 @@
                             <constraint firstItem="Myc-W2-HwH" firstAttribute="centerX" secondItem="kGn-jm-t3f" secondAttribute="centerX" id="e3w-IF-9HM"/>
                             <constraint firstItem="JrB-Jq-Jru" firstAttribute="centerX" secondItem="kGn-jm-t3f" secondAttribute="centerX" id="eZp-2k-ufM"/>
                             <constraint firstItem="HId-wF-nGD" firstAttribute="centerX" secondItem="kGn-jm-t3f" secondAttribute="centerX" id="gXw-69-NKp">
-                                <variation key="heightClass=regular" constant="28"/>
+                                <variation key="heightClass=regular" constant="25"/>
                             </constraint>
                             <constraint firstItem="0eB-KI-bTN" firstAttribute="leading" secondItem="kGn-jm-t3f" secondAttribute="leadingMargin" id="kWL-Mf-Z20"/>
                             <constraint firstItem="1nw-9Z-0Ma" firstAttribute="top" secondItem="aI8-ba-r8y" secondAttribute="bottom" constant="-51" id="mMH-zh-QtK"/>
@@ -373,6 +370,10 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomBarView" destination="Myc-W2-HwH" id="BPf-jE-1nU"/>
+                        <outlet property="dateLabel" destination="HId-wF-nGD" id="d4X-pO-tCr"/>
+                        <outlet property="enableButton" destination="aI8-ba-r8y" id="VJP-j9-Iua"/>
+                        <outlet property="refreshButton" destination="1nw-9Z-0Ma" id="S98-SQ-zmG"/>
+                        <outlet property="saveUnsaveButton" destination="r3M-xf-fq7" id="ljC-x7-GuE"/>
                         <outlet property="topBarView" destination="0eB-KI-bTN" id="WHy-gi-UZT"/>
                     </connections>
                 </viewController>
@@ -383,7 +384,7 @@
         <!--Messages View Controller-->
         <scene sceneID="7n6-N7-pua">
             <objects>
-                <viewController id="zOE-9x-CJN" customClass="MessagesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessagesViewController" id="zOE-9x-CJN" customClass="MessagesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ky7-jY-tdf"/>
                         <viewControllerLayoutGuide type="bottom" id="bqF-Np-DYL"/>
