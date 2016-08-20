@@ -116,7 +116,7 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
   }];
 }
 
-- (void)participateRegisterWithToken:(NSString *)token remember:(BOOL)remember completionHandler:(void (^)(NSArray *messages, NSError *error))completion {
+- (void)participateRegisterWithToken:(NSString *)token remember:(BOOL)remember completionHandler:(void (^)(User *user, NSError *error))completion {
   NSString *endpointURL = [NSString stringWithFormat:@"%@api/participate/register", BaseURLString];
   NSDictionary *params = nil;
   if (token) {
@@ -125,13 +125,19 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
                };
   }
   [self.manager POST:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    User *user = [self.parser userFromDictionary:[responseObject objectForKey:@"user"]];
+    if (completion) {
+      completion(user, nil);
+    }
 
   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
+    if (completion) {
+      completion(nil, error);
+    }
   }];
 }
 
-- (void)participateUnregisterWithToken:(NSString *)token remember:(BOOL)remember completionHandler:(void (^)(NSArray *messages, NSError *error))completion {
+- (void)participateUnregisterWithToken:(NSString *)token remember:(BOOL)remember completionHandler:(void (^)(User *user, NSError *error))completion {
   NSString *endpointURL = [NSString stringWithFormat:@"%@api/participate/unregister", BaseURLString];
   NSDictionary *params = nil;
   if (token) {
@@ -140,9 +146,14 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
                };
   }
   [self.manager POST:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-
+    User *user = [self.parser userFromDictionary:[responseObject objectForKey:@"user"]];
+    if (completion) {
+      completion(user, nil);
+    }
   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
+    if (completion) {
+      completion(nil, error);
+    }
   }];
 }
 

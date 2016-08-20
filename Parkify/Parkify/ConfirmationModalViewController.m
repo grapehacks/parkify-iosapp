@@ -34,25 +34,31 @@
 }
 
 - (IBAction)noAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)yesAction:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    switch (appDelegate.session.user.participate) {
-        case ParticipateModeDecline:
-        case ParticipateModeTentative:
-            [[ConnectionManager sharedInstance] participateRegisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:nil];
-        case ParticipateModeAccept:
-            [[ConnectionManager sharedInstance] participateUnregisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:nil];
-        default:
-            [self dismissViewControllerAnimated:YES completion:nil];
-            break;
+  AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+  switch (appDelegate.session.user.participate) {
+    case ParticipateModeDecline:
+    case ParticipateModeTentative: {
+      [[ConnectionManager sharedInstance] participateRegisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:^(User *user, NSError *error) {
+        appDelegate.session.user = user;
+      }];
     }
+    case ParticipateModeAccept: {
+      [[ConnectionManager sharedInstance] participateUnregisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:^(User *user, NSError *error) {
+        appDelegate.session.user = user;
+      }];
+    }
+    default:
+      [self dismissViewControllerAnimated:YES completion:nil];
+      break;
+  }
 }
 
 - (IBAction)switchAction:(id)sender {
-    
+
 }
 
 

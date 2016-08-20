@@ -48,14 +48,19 @@
     
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[topBar]-|" options:0 metrics:nil views:views]];
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[topBar]-|" options:0 metrics:nil views:views]];
-    
-    switch ([self participateMode]) {
-        case ParticipateModeDecline:
-        case ParticipateModeTentative:
-            [self setupForUnregisteredUser];
-        case ParticipateModeAccept:
-            [self setupForRegisteredUser];
-    }
+
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  switch ([self participateMode]) {
+    case ParticipateModeDecline:
+    case ParticipateModeTentative:
+      [self setupForUnregisteredUser];
+      break;
+    case ParticipateModeAccept:
+      [self setupForRegisteredUser];
+  }
 }
 
 - (ParticipateMode)participateMode {
@@ -72,6 +77,7 @@
         case ParticipateModeDecline:
         case ParticipateModeTentative:
             [self.confirmationModalViewController registerConfirmation];
+        break;
         case ParticipateModeAccept:
             [self.confirmationModalViewController unregisterConfirmation];
     }
