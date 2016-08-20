@@ -24,10 +24,12 @@
 + (void)saveToken:(NSString *)token forUser:(User *)user {
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   [defaults setValue:token forKey:user.email];
+  [defaults synchronize];
 }
 
 + (NSString *)tokenForUser:(User *)user {
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   return [defaults stringForKey:user.email];
 }
+
 @end
