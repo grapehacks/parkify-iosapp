@@ -81,13 +81,6 @@
   return history;
 }
 
-- (History *)historyFromDictionary:(NSDictionary *)jsonDictionary {
-    History *history = [History new];
-    history.date = [self dateFromDictionary:jsonDictionary[@"date"]];
-    history.draw = [self drawFromDictionary:jsonDictionary[@"draw"]];
-    history.user = [self userFromDictionary:jsonDictionary[@"user"]];
-    return history;
-}
 
 - (NSDate *)dateFromDictionary:(NSDictionary *)dateDictionary {
   NSString *dateString = dateDictionary[@"date"];
