@@ -26,6 +26,9 @@
 
   [[ConnectionManager sharedInstance] pingWithToken:self.session.token completionHandler:^(NSDate *date, User *user, NSError *error) {
     if (!user.email) {
+      if (date) {
+        self.session.drawDate = date;
+      }
       self.session.user = user;
       viewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     } else {

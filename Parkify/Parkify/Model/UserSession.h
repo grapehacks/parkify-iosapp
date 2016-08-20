@@ -12,6 +12,7 @@
 @interface UserSession : NSObject
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) User *user;
+@property (nonatomic, strong) NSDate *drawDate;
 
 - (instancetype)initWithUser:(User *)user token:(NSString *)token;
 
