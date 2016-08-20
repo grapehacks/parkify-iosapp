@@ -45,11 +45,13 @@
       [[ConnectionManager sharedInstance] participateRegisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:^(User *user, NSError *error) {
         appDelegate.session.user = user;
       }];
+      break;
     }
     case ParticipateModeAccept: {
       [[ConnectionManager sharedInstance] participateUnregisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:^(User *user, NSError *error) {
         appDelegate.session.user = user;
       }];
+      break;
     }
     default:
       [self dismissViewControllerAnimated:YES completion:nil];
