@@ -116,6 +116,36 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
   }];
 }
 
+- (void)participateRegisterWithToken:(NSString *)token remember:(BOOL)remember completionHandler:(void (^)(NSArray *messages, NSError *error))completion {
+  NSString *endpointURL = [NSString stringWithFormat:@"%@api/participate/register", BaseURLString];
+  NSDictionary *params = nil;
+  if (token) {
+    params = @{@"token" : token,
+               @"rememberLastChoice" : @(remember)
+               };
+  }
+  [self.manager POST:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+
+  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+
+  }];
+}
+
+- (void)participateUnregisterWithToken:(NSString *)token remember:(BOOL)remember completionHandler:(void (^)(NSArray *messages, NSError *error))completion {
+  NSString *endpointURL = [NSString stringWithFormat:@"%@api/participate/unregister", BaseURLString];
+  NSDictionary *params = nil;
+  if (token) {
+    params = @{@"token" : token,
+               @"rememberLastChoice" : @(remember)
+               };
+  }
+  [self.manager POST:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+
+  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+
+  }];
+}
+
 
 //- (void)retrieveUsersWithToken:(NSString *)token completionHandler:(void (^)(NSArray *users, NSError *error))completion {
 //  NSString *endpointURL = [NSString stringWithFormat:@"%@api/users", BaseURLString];
