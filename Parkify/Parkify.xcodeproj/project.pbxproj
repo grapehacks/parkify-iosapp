@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FA797341D67CADB003AF371 /* Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA797331D67CADB003AF371 /* Draw.m */; };
+		4FA797371D67CB2B003AF371 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA797361D67CB2B003AF371 /* History.m */; };
 		7DB06D411D67787F00164215 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB06D401D67787F00164215 /* main.m */; };
 		7DB06D441D67787F00164215 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB06D431D67787F00164215 /* AppDelegate.m */; };
 		7DB06D471D67787F00164215 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB06D461D67787F00164215 /* ViewController.m */; };
@@ -30,6 +32,10 @@
 /* Begin PBXFileReference section */
 		0DE58DA692A0EF2F040ED0E4 /* Pods-Parkify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parkify/Pods-Parkify.debug.xcconfig"; sourceTree = "<group>"; };
 		44FBEBFCAB0929FDDB9A56A5 /* Pods_Parkify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parkify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FA797321D67CADB003AF371 /* Draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw.h; sourceTree = "<group>"; };
+		4FA797331D67CADB003AF371 /* Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw.m; sourceTree = "<group>"; };
+		4FA797351D67CB2B003AF371 /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
+		4FA797361D67CB2B003AF371 /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		7DB06D3C1D67787F00164215 /* Parkify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parkify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB06D401D67787F00164215 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7DB06D421D67787F00164215 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -144,6 +150,10 @@
 				7DF379441D67937C0021FBC3 /* User.m */,
 				7DF379461D67983A0021FBC3 /* Message.h */,
 				7DF379471D67983A0021FBC3 /* Message.m */,
+				4FA797321D67CADB003AF371 /* Draw.h */,
+				4FA797331D67CADB003AF371 /* Draw.m */,
+				4FA797351D67CB2B003AF371 /* History.h */,
+				4FA797361D67CB2B003AF371 /* History.m */,
 				7DF379541D67DE4C0021FBC3 /* UserSession.h */,
 				7DF379551D67DE4C0021FBC3 /* UserSession.m */,
 			);
@@ -304,12 +314,14 @@
 				7DF379451D67937C0021FBC3 /* User.m in Sources */,
 				7DF379481D67983A0021FBC3 /* Message.m in Sources */,
 				845B0F741D67AFFB00AB6627 /* MainUserViewController.m in Sources */,
+				4FA797341D67CADB003AF371 /* Draw.m in Sources */,
 				7DB06D441D67787F00164215 /* AppDelegate.m in Sources */,
 				7DF379531D67AF240021FBC3 /* ConnectionManager.m in Sources */,
 				7DF379561D67DE4C0021FBC3 /* UserSession.m in Sources */,
 				7DB06D4D1D67787F00164215 /* Parkify.xcdatamodeld in Sources */,
 				7DF3794F1D679F7A0021FBC3 /* JSONParser.m in Sources */,
 				845B0F771D67B06B00AB6627 /* TopBarViewController.m in Sources */,
+				4FA797371D67CB2B003AF371 /* History.m in Sources */,
 				7DB06D411D67787F00164215 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
