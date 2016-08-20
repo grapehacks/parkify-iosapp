@@ -67,8 +67,17 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
 
   [self.manager GET:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     NSLog(@"ping response %@", responseObject);
-    User *user = [self.parser userFromDictionary:[responseObject objectForKey:@"user"]];
-    NSDate *date = [self.parser objectOfType:[NSDate class] fromJSONString:[responseObject objectForKey:@"date"]];
+    NSDictionary *userDictionary = [responseObject objectForKey:@"user"];
+    NSDictionary *dateString = [responseObject objectForKey:@"date"];
+    NSDate *date = nil;
+    User *user = nil;
+    if (dateString) {
+      date = [self.parser objectOfType:[NSDate class] fromJSONString:[responseObject objectForKey:@"date"]];
+      if (userDictionary) {
+        user = [self.parser userFromDictionary:[responseObject objectForKey:@"user"]];
+      }
+    }
+    
 
     if (completion) {
       completion(date, user, nil);
