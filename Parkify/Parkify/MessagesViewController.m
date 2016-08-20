@@ -42,6 +42,31 @@
     }];
 }
 
+- (void)setMessagesArray:(NSArray *)messagesArray {
+    _messagesArray = messagesArray;
+    [self.tableView reloadData];
+}
+
+- (UIColor *)colorForMessageType:(MessageType)type {
+    switch (type) {
+        case MessageTypeWin:
+        case MessageTypeWinReceive:
+            return [UIColor greenColor];
+        case MessageTypeInfo:
+            return [UIColor yellowColor];
+        case MessageTypeLoss:
+        case MessageTypeLossReturn:
+            return [UIColor redColor];
+        case MessageTypeError:
+            return [UIColor magentaColor];
+        case MessageTypeWarning:
+            return [UIColor magentaColor];
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark - Table View Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -50,18 +75,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageTableViewCell *cell = (MessageTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"MessageTableViewCell"];
-    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
-    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
-    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
-    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-    
+
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MessageTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    cell.titleLabel.text = @"dupa";
-    cell.descriptionLabel.text = @"dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa dupa ";
-    [cell setBackgroundColor:color];
+    
+    cell.titleLabel.text = ((Message *)self.messagesArray[indexPath.row]).topic;
+    cell.descriptionLabel.text = ((Message *)self.messagesArray[indexPath.row]).text;
+    [cell setBackgroundColor:[self colorForMessageType:((Message *)self.messagesArray[indexPath.row]).type]];
     
     return cell;
 }
