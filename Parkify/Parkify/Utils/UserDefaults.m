@@ -8,28 +8,20 @@
 
 #import "UserDefaults.h"
 
+static NSString *kTokenKey = @"userToken";
+
 @implementation UserDefaults
 
-+ (void)saveToken:(NSString *)token forUserEmail:(NSString *)email {
++ (void)saveActiveToken:(NSString *)token {
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  [defaults setValue:token forKey:email];
+  [defaults setValue:token forKey:kTokenKey];
   [defaults synchronize];
 }
 
-+ (NSString *)tokenForUserEmail:(NSString *)email {
++ (NSString *)activeToken {
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  return [defaults stringForKey:email];
+  return [defaults stringForKey:kTokenKey];
 }
 
-+ (void)saveToken:(NSString *)token forUser:(User *)user {
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  [defaults setValue:token forKey:user.email];
-  [defaults synchronize];
-}
-
-+ (NSString *)tokenForUser:(User *)user {
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  return [defaults stringForKey:user.email];
-}
 
 @end

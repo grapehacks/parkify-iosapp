@@ -11,8 +11,6 @@
 
 @interface UserDefaults: NSObject
 
-+ (void)saveToken:(NSString *)token forUserEmail:(NSString *)email;
-+ (NSString *)tokenForUserEmail:(NSString *)email;
-+ (NSString *)tokenForUser:(User *)user;
-+ (void)saveToken:(NSString *)token forUser:(User *)user;
++ (void)saveActiveToken:(NSString *)token;
++ (NSString *)activeToken;
 @end

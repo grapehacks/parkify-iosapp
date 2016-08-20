@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "MainUserViewController.h"
 #import "ConnectionManager.h"
+#import "UserDefaults.h"
 
 @class UserSession;
 
@@ -49,6 +50,7 @@
                                               UserSession *session = [[UserSession alloc] initWithUser:user token:token];
                                               AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
                                               appDelegate.session = session;
+                                              [UserDefaults saveActiveToken:token];
 
                                               UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                               UIViewController *mainUserViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MainUserViewController"];

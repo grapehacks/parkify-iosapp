@@ -17,9 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
-
-
-
+  self.session = [[UserSession alloc]initWithUser:nil token:[UserDefaults activeToken]];
   return YES;
 }
 
