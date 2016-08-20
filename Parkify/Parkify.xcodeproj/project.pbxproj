@@ -19,6 +19,8 @@
 		845B0F771D67B06B00AB6627 /* TopBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845B0F761D67B06B00AB6627 /* TopBarViewController.m */; };
 		8485322B1D67DD5000742A66 /* ConfirmationModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485322A1D67DD5000742A66 /* ConfirmationModalViewController.m */; };
 		8485322E1D67DD6800742A66 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485322D1D67DD6800742A66 /* MessagesViewController.m */; };
+		848532321D67E29E00742A66 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 848532301D67E29E00742A66 /* MessageTableViewCell.m */; };
+		848532331D67E29E00742A66 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848532311D67E29E00742A66 /* MessageTableViewCell.xib */; };
 		8499DE151D679DE0007BD4EA /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8499DE141D679DE0007BD4EA /* footer.xib */; };
 		9C599C939FF75DD8C6FFBCED /* Pods_Parkify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FBEBFCAB0929FDDB9A56A5 /* Pods_Parkify.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,9 @@
 		8485322A1D67DD5000742A66 /* ConfirmationModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationModalViewController.m; sourceTree = "<group>"; };
 		8485322C1D67DD6800742A66 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		8485322D1D67DD6800742A66 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		8485322F1D67E29E00742A66 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		848532301D67E29E00742A66 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		848532311D67E29E00742A66 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		8499DE141D679DE0007BD4EA /* footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		C982519C928745C3DDD3799E /* Pods-Parkify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parkify/Pods-Parkify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +108,9 @@
 				8485322A1D67DD5000742A66 /* ConfirmationModalViewController.m */,
 				8485322C1D67DD6800742A66 /* MessagesViewController.h */,
 				8485322D1D67DD6800742A66 /* MessagesViewController.m */,
+				8485322F1D67E29E00742A66 /* MessageTableViewCell.h */,
+				848532301D67E29E00742A66 /* MessageTableViewCell.m */,
+				848532311D67E29E00742A66 /* MessageTableViewCell.xib */,
 				8499DE141D679DE0007BD4EA /* footer.xib */,
 				845B0F751D67B06B00AB6627 /* TopBarViewController.h */,
 				845B0F761D67B06B00AB6627 /* TopBarViewController.m */,
@@ -193,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				845B0F671D67A7ED00AB6627 /* topBarViewController.xib in Resources */,
+				848532331D67E29E00742A66 /* MessageTableViewCell.xib in Resources */,
 				7DB06D521D67787F00164215 /* LaunchScreen.storyboard in Resources */,
 				7DB06D4F1D67787F00164215 /* Assets.xcassets in Resources */,
 				8499DE151D679DE0007BD4EA /* footer.xib in Resources */,
@@ -257,6 +266,7 @@
 			files = (
 				7DB06D471D67787F00164215 /* ViewController.m in Sources */,
 				845B0F741D67AFFB00AB6627 /* MainUserViewController.m in Sources */,
+				848532321D67E29E00742A66 /* MessageTableViewCell.m in Sources */,
 				8485322E1D67DD6800742A66 /* MessagesViewController.m in Sources */,
 				7DB06D441D67787F00164215 /* AppDelegate.m in Sources */,
 				7DB06D4D1D67787F00164215 /* Parkify.xcdatamodeld in Sources */,
