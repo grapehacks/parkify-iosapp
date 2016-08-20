@@ -31,7 +31,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tVQ-gh-DE1" kind="show" id="8kS-ud-N28"/>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PWH-w4-cHE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z0I-bU-fwP">
@@ -117,6 +117,8 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="footerView" destination="omh-f6-OFL" id="76B-vc-YfL"/>
+                        <outlet property="passwordTextField" destination="XNZ-Pf-YRq" id="Vz3-nD-08y"/>
+                        <outlet property="userNameTextField" destination="z0I-bU-fwP" id="gsU-RL-lwJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,7 +128,7 @@
         <!--Main User View Controller-->
         <scene sceneID="Qbv-F0-YHa">
             <objects>
-                <viewController id="tVQ-gh-DE1" customClass="MainUserViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainUserViewController" id="tVQ-gh-DE1" customClass="MainUserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9nV-KW-sq7"/>
                         <viewControllerLayoutGuide type="bottom" id="5iI-Oa-fQm"/>
