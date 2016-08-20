@@ -19,6 +19,10 @@
 		7DF379481D67983A0021FBC3 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF379471D67983A0021FBC3 /* Message.m */; };
 		7DF3794F1D679F7A0021FBC3 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3794E1D679F7A0021FBC3 /* JSONParser.m */; };
 		7DF379531D67AF240021FBC3 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF379521D67AF240021FBC3 /* ConnectionManager.m */; };
+		845B0F671D67A7ED00AB6627 /* topBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845B0F661D67A7ED00AB6627 /* topBarViewController.xib */; };
+		845B0F741D67AFFB00AB6627 /* MainUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845B0F731D67AFFB00AB6627 /* MainUserViewController.m */; };
+		845B0F771D67B06B00AB6627 /* TopBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845B0F761D67B06B00AB6627 /* TopBarViewController.m */; };
+		8499DE151D679DE0007BD4EA /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8499DE141D679DE0007BD4EA /* footer.xib */; };
 		9C599C939FF75DD8C6FFBCED /* Pods_Parkify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FBEBFCAB0929FDDB9A56A5 /* Pods_Parkify.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,12 @@
 		7DF3794E1D679F7A0021FBC3 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		7DF379511D67AF240021FBC3 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
 		7DF379521D67AF240021FBC3 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		845B0F661D67A7ED00AB6627 /* topBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topBarViewController.xib; sourceTree = "<group>"; };
+		845B0F721D67AFFB00AB6627 /* MainUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUserViewController.h; sourceTree = "<group>"; };
+		845B0F731D67AFFB00AB6627 /* MainUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUserViewController.m; sourceTree = "<group>"; };
+		845B0F751D67B06B00AB6627 /* TopBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopBarViewController.h; sourceTree = "<group>"; };
+		845B0F761D67B06B00AB6627 /* TopBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopBarViewController.m; sourceTree = "<group>"; };
+		8499DE141D679DE0007BD4EA /* footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		C982519C928745C3DDD3799E /* Pods-Parkify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parkify/Pods-Parkify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +108,13 @@
 				7DB06D431D67787F00164215 /* AppDelegate.m */,
 				7DB06D451D67787F00164215 /* ViewController.h */,
 				7DB06D461D67787F00164215 /* ViewController.m */,
+				845B0F721D67AFFB00AB6627 /* MainUserViewController.h */,
+				845B0F731D67AFFB00AB6627 /* MainUserViewController.m */,
 				7DB06D481D67787F00164215 /* Main.storyboard */,
+				8499DE141D679DE0007BD4EA /* footer.xib */,
+				845B0F751D67B06B00AB6627 /* TopBarViewController.h */,
+				845B0F761D67B06B00AB6627 /* TopBarViewController.m */,
+				845B0F661D67A7ED00AB6627 /* topBarViewController.xib */,
 				7DB06D4E1D67787F00164215 /* Assets.xcassets */,
 				7DB06D501D67787F00164215 /* LaunchScreen.storyboard */,
 				7DB06D531D67787F00164215 /* Info.plist */,
@@ -215,8 +231,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845B0F671D67A7ED00AB6627 /* topBarViewController.xib in Resources */,
 				7DB06D521D67787F00164215 /* LaunchScreen.storyboard in Resources */,
 				7DB06D4F1D67787F00164215 /* Assets.xcassets in Resources */,
+				8499DE151D679DE0007BD4EA /* footer.xib in Resources */,
 				7DB06D4A1D67787F00164215 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,10 +298,12 @@
 				7DB06D471D67787F00164215 /* ViewController.m in Sources */,
 				7DF379451D67937C0021FBC3 /* User.m in Sources */,
 				7DF379481D67983A0021FBC3 /* Message.m in Sources */,
+				845B0F741D67AFFB00AB6627 /* MainUserViewController.m in Sources */,
 				7DB06D441D67787F00164215 /* AppDelegate.m in Sources */,
 				7DF379531D67AF240021FBC3 /* ConnectionManager.m in Sources */,
 				7DB06D4D1D67787F00164215 /* Parkify.xcdatamodeld in Sources */,
 				7DF3794F1D679F7A0021FBC3 /* JSONParser.m in Sources */,
+				845B0F771D67B06B00AB6627 /* TopBarViewController.m in Sources */,
 				7DB06D411D67787F00164215 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
