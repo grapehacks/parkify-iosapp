@@ -181,7 +181,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="ujh-DT-WT8" kind="presentation" id="x1V-6y-3mn"/>
+                                    <action selector="registerUnregisterAction:" destination="tVQ-gh-DE1" eventType="touchUpInside" id="TXj-R7-xV6"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="rE2-bm-zWt">
@@ -241,7 +241,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3M-xf-fq7">
                                 <rect key="frame" x="277" y="500" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <state key="normal" title="ZAPISANO" backgroundImage="greenButton">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -491,7 +491,7 @@
         <!--Confirmation Modal View Controller-->
         <scene sceneID="FmH-oy-Gis">
             <objects>
-                <viewController id="ujh-DT-WT8" customClass="ConfirmationModalViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmationModalViewController" id="ujh-DT-WT8" customClass="ConfirmationModalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mmN-rd-mRt"/>
                         <viewControllerLayoutGuide type="bottom" id="lly-Kg-XUZ"/>
@@ -547,6 +547,9 @@
                                         <include reference="zT8-g9-WtE"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="noAction:" destination="ujh-DT-WT8" eventType="touchUpInside" id="djv-mD-zJB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAd-yi-f5I">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -570,6 +573,9 @@
                                         <include reference="bNF-6M-BIb"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="yesAction:" destination="ujh-DT-WT8" eventType="touchUpInside" id="LbB-u2-9wy"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f15-dX-TKi">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -581,6 +587,9 @@ biorących udział w losowaniu karty parkingowej?</string>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PwO-ou-MUN">
                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchAction:" destination="ujh-DT-WT8" eventType="valueChanged" id="EM1-YA-5EZ"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zawsze chcę być zapisany" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhS-vM-mYT">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -589,7 +598,7 @@ biorących udział w losowaniu karty parkingowej?</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.4392156862745098" green="0.76078431372549016" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.37647058823529411" green="0.72156862745098038" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="CAd-yi-f5I" secondAttribute="trailing" constant="40" id="0c0-Xe-emE"/>
                             <constraint firstItem="KhS-vM-mYT" firstAttribute="leading" secondItem="PwO-ou-MUN" secondAttribute="trailing" constant="15" id="4Cj-1K-EYF"/>
@@ -669,6 +678,11 @@ biorących udział w losowaniu karty parkingowej?</string>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="confirmationDesctription" destination="KhS-vM-mYT" id="pUj-WF-LMa"/>
+                        <outlet property="confirmationLabel" destination="f15-dX-TKi" id="tae-IB-Ssb"/>
+                        <outlet property="confirmationSwitch" destination="PwO-ou-MUN" id="Ke0-o2-X0M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGj-4G-1Y6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

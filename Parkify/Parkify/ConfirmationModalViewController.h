@@ -10,4 +10,7 @@
 
 @interface ConfirmationModalViewController : UIViewController
 
+- (void)registerConfirmation;
+- (void)unregisterConfirmation;
+
 @end

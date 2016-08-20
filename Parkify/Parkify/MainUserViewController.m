@@ -9,6 +9,7 @@
 #import "MainUserViewController.h"
 #import "TopBarViewController.h"
 #import "MessagesViewController.h"
+#import "ConfirmationModalViewController.h"
 
 @interface MainUserViewController ()
 @property (strong, nonatomic) IBOutlet UIView *topBarView;
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *refreshButton;
 @property (strong, nonatomic) IBOutlet UIButton *saveUnsaveButton;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) ConfirmationModalViewController *confirmationModalViewController;
 
 @property (strong, nonatomic) TopBarViewController *topBarViewController;
 @end
@@ -45,6 +47,31 @@
     
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[topBar]-|" options:0 metrics:nil views:views]];
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[topBar]-|" options:0 metrics:nil views:views]];
+    [self setupForUnregisteredUser];
+}
+
+- (IBAction)registerUnregisterAction:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.confirmationModalViewController = [storyBoard instantiateViewControllerWithIdentifier:@"ConfirmationModalViewController"];
+    self.confirmationModalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+//    [self.confirmationModalViewController registerConfirmation];
+    [self.confirmationModalViewController unregisterConfirmation];
+    [self presentViewController:self.confirmationModalViewController animated:YES completion:NULL];
+    
+    
+    
+}
+
+- (void)setupForRegisteredUser {
+    [self.enableButton setImage:[UIImage imageNamed:@"onState"] forState:UIControlStateNormal];
+    [self.saveUnsaveButton setBackgroundImage:[UIImage imageNamed:@"greenButton"] forState:UIControlStateNormal];
+    [self.saveUnsaveButton setTitle:@"ZAPISANO" forState:UIControlStateNormal];
+}
+
+- (void)setupForUnregisteredUser {
+    [self.enableButton setImage:[UIImage imageNamed:@"offState"] forState:UIControlStateNormal];
+    [self.saveUnsaveButton setBackgroundImage:[UIImage imageNamed:@"redButton"] forState:UIControlStateNormal];
+    [self.saveUnsaveButton setTitle:@"NIE ZAPISANO" forState:UIControlStateNormal];
 }
 
 @end
