@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "MainUserViewController.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIView *footerView;
+@property (strong, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 @end
 
 @implementation ViewController
@@ -27,12 +30,21 @@
     
     [self.footerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[container]-|" options:0 metrics:nil views:views]];
     [self.footerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[container]-|" options:0 metrics:nil views:views]];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)loginAction:(id)sender {
+    BOOL userCanLogin = YES; //should be modify
+    if (userCanLogin) {
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *mainUserViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MainUserViewController"];
+        mainUserViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:mainUserViewController animated:YES completion:NULL];
+    }
 }
 
 @end
