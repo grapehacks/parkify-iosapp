@@ -33,12 +33,21 @@
 
 - (IBAction)personalAction:(id)sender {
     UIButton *button = sender;
-    [self.popupView setFrame:CGRectMake(button.frame.origin.x - self.popupView.bounds.size.width/2 - button.frame.size.width + 15/2, button.frame.origin.y + button.frame.size.height, self.popupView.bounds.size.width, self.popupView.bounds.size.height)];
+    [self.popupView setFrame:CGRectMake(button.frame.origin.x - self.popupView.bounds.size.width/2 - button.frame.size.width + 15/2, button.frame.origin.y + button.frame.size.height - 10, self.popupView.bounds.size.width, self.popupView.bounds.size.height)];
     
     [self.view addSubview:self.popupView];    
 }
 
 - (IBAction)infoAction:(id)sender {
+    
+}
+
+- (IBAction)changePasswordAction:(id)sender {
+    
+}
+
+- (IBAction)logoutAction:(id)sender {
+    
 }
 
 @end

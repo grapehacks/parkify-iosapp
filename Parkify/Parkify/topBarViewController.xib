@@ -159,7 +159,37 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dit-lo-qNf">
                     <rect key="frame" x="0.0" y="19" width="235" height="126"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eV8-1x-lzB">
+                            <rect key="frame" x="28" y="25" width="207" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Change password">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="changePasswordAction:" destination="-1" eventType="touchUpInside" id="R8d-R3-UTJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugb-uS-MJr">
+                            <rect key="frame" x="28" y="65" width="207" height="33"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="Logout">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="YyW-91-FZF"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="eV8-1x-lzB" firstAttribute="top" secondItem="dit-lo-qNf" secondAttribute="top" constant="25" id="Aat-o9-dvn"/>
+                        <constraint firstAttribute="trailing" secondItem="Ugb-uS-MJr" secondAttribute="trailing" id="CSA-rv-Axt"/>
+                        <constraint firstItem="Ugb-uS-MJr" firstAttribute="leading" secondItem="dit-lo-qNf" secondAttribute="leading" constant="28" id="Eye-6E-LiO"/>
+                        <constraint firstAttribute="trailing" secondItem="eV8-1x-lzB" secondAttribute="trailing" id="H3a-dc-p0M"/>
+                        <constraint firstAttribute="bottom" secondItem="Ugb-uS-MJr" secondAttribute="bottom" constant="28" id="VAz-ZM-TVb"/>
+                        <constraint firstItem="eV8-1x-lzB" firstAttribute="leading" secondItem="dit-lo-qNf" secondAttribute="leading" constant="28" id="eJe-Mt-b27"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

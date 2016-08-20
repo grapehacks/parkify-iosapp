@@ -161,23 +161,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eB-KI-bTN">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="91" id="TS4-oK-od9"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="TS4-oK-od9"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="TS4-oK-od9"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-ba-r8y">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -263,6 +246,23 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eB-KI-bTN">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="TS4-oK-od9"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TS4-oK-od9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="TS4-oK-od9"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -301,13 +301,13 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Myc-W2-HwH"/>
-                                <exclude reference="0eB-KI-bTN"/>
                                 <exclude reference="aI8-ba-r8y"/>
                                 <exclude reference="rE2-bm-zWt"/>
                                 <exclude reference="1nw-9Z-0Ma"/>
                                 <exclude reference="HId-wF-nGD"/>
                                 <exclude reference="JrB-Jq-Jru"/>
                                 <exclude reference="r3M-xf-fq7"/>
+                                <exclude reference="0eB-KI-bTN"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="OSW-c0-bHh"/>
@@ -334,13 +334,13 @@
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="Myc-W2-HwH"/>
-                                <include reference="0eB-KI-bTN"/>
                                 <include reference="aI8-ba-r8y"/>
                                 <include reference="rE2-bm-zWt"/>
                                 <include reference="1nw-9Z-0Ma"/>
                                 <include reference="HId-wF-nGD"/>
                                 <include reference="JrB-Jq-Jru"/>
                                 <include reference="r3M-xf-fq7"/>
+                                <include reference="0eB-KI-bTN"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="OSW-c0-bHh"/>
@@ -392,23 +392,6 @@
                     <view key="view" contentMode="scaleToFill" id="u2d-zJ-5A7">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyF-ed-2RV">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="91" id="mbz-eH-hDa"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="mbz-eH-hDa"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="mbz-eH-hDa"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mLo-ed-AzH">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -426,6 +409,23 @@
                                     <outlet property="delegate" destination="zOE-9x-CJN" id="ZmV-XX-mjK"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyF-ed-2RV">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="mbz-eH-hDa"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mbz-eH-hDa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="mbz-eH-hDa"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -441,8 +441,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="kyF-ed-2RV"/>
                                 <exclude reference="mLo-ed-AzH"/>
+                                <exclude reference="kyF-ed-2RV"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Grq-2H-ReU"/>
@@ -458,8 +458,8 @@
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
-                                <include reference="kyF-ed-2RV"/>
                                 <include reference="mLo-ed-AzH"/>
+                                <include reference="kyF-ed-2RV"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Grq-2H-ReU"/>
