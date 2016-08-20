@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -390,6 +390,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bqF-Np-DYL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="u2d-zJ-5A7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mLo-ed-AzH">
@@ -400,6 +401,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vn7-KB-Iy6" id="Ifa-8I-Xp1">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -445,6 +447,7 @@
                                 <exclude reference="kyF-ed-2RV"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="gEs-CN-gAK"/>
                                 <exclude reference="Grq-2H-ReU"/>
                                 <exclude reference="UED-LJ-e5X"/>
                                 <exclude reference="hF2-TZ-3Z0"/>
@@ -453,7 +456,6 @@
                                 <exclude reference="4wX-CV-12P"/>
                                 <exclude reference="F93-up-23a"/>
                                 <exclude reference="Hia-hs-DBS"/>
-                                <exclude reference="gEs-CN-gAK"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -462,6 +464,7 @@
                                 <include reference="kyF-ed-2RV"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="gEs-CN-gAK"/>
                                 <exclude reference="Grq-2H-ReU"/>
                                 <include reference="UED-LJ-e5X"/>
                                 <exclude reference="hF2-TZ-3Z0"/>
@@ -470,7 +473,6 @@
                                 <include reference="4wX-CV-12P"/>
                                 <include reference="F93-up-23a"/>
                                 <include reference="Hia-hs-DBS"/>
-                                <include reference="gEs-CN-gAK"/>
                             </mask>
                         </variation>
                     </view>
@@ -478,6 +480,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="tableView" destination="mLo-ed-AzH" id="Dnf-86-rHD"/>
                         <outlet property="topBarView" destination="kyF-ed-2RV" id="BVY-ip-faH"/>
                     </connections>
                 </viewController>

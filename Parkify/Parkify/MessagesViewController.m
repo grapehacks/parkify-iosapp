@@ -9,10 +9,15 @@
 #import "MessagesViewController.h"
 #import "TopBarViewController.h"
 #import "MessageTableViewCell.h"
+#import "ConnectionManager.h"
+#import "AppDelegate.h"
 
+//retriveMessages
 @interface MessagesViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topBarView;
 @property (strong, nonatomic) TopBarViewController *topBarViewController;
+@property (strong, nonatomic) NSArray *messagesArray;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -29,12 +34,18 @@
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[topBar]-|" options:0 metrics:nil views:views]];
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[topBar]-|" options:0 metrics:nil views:views]];
     [self.topBarViewController.winnersButton setHidden:YES];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [[ConnectionManager sharedInstance] retrieveMessagesWithToken:appDelegate.session.token completionHandler:^(NSArray *messages, NSError *error) {
+        if (!error) {
+            self.messagesArray = messages;
+        }
+    }];
 }
 
-#pragma mark - Table View Data Source 
+#pragma mark - Table View Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.messagesArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
