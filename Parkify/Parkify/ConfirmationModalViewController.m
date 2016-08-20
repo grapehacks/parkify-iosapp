@@ -7,12 +7,13 @@
 //
 
 #import "ConfirmationModalViewController.h"
+#import "ConnectionManager.h"
+#import "AppDelegate.h"
 
 @interface ConfirmationModalViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *confirmationLabel;
 @property (strong, nonatomic) IBOutlet UISwitch *confirmationSwitch;
 @property (strong, nonatomic) IBOutlet UILabel *confirmationDesctription;
-
 
 @end
 
@@ -37,8 +38,17 @@
 }
 
 - (IBAction)yesAction:(id)sender {
-    // connectionManarer
-    //    self.confirmationSwitch.state
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    switch (appDelegate.session.user.participate) {
+        case ParticipateModeDecline:
+        case ParticipateModeTentative:
+            [[ConnectionManager sharedInstance] participateRegisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:nil];
+        case ParticipateModeAccept:
+            [[ConnectionManager sharedInstance] participateUnregisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:nil];
+        default:
+            [self dismissViewControllerAnimated:YES completion:nil];
+            break;
+    }
 }
 
 - (IBAction)switchAction:(id)sender {

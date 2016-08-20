@@ -18,6 +18,9 @@
 - (void)pingWithToken:(NSString *)token completionHandler:(void (^)(NSDate *date, User *user, NSError *error))completion;
 - (void)retrieveMessagesWithToken:(NSString *)token completionHandler:(void (^)(NSArray *messages, NSError *error))completion;
 
+- (void)participateRegisterWithToken:(NSString *)token remember:(BOOL)remember completionHandler:(void (^)(NSArray *messages, NSError *error))completion;
+- (void)participateUnregisterWithToken:(NSString *)token remember:(BOOL)remember completionHandler:(void (^)(NSArray *messages, NSError *error))completion;
+
 //- (void)retrieveUsersWithToken:(NSString *)token completionHandler:(void (^)(NSArray *users, NSError *error))completion;
 //- (void)retrieveCardsWithToken:(NSString *)token completionHandler:(void (^)(NSArray *cards, NSError *error))completion;
 @end
