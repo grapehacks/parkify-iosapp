@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "UserDefaults.h"
+#import "ConnectionManager.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 @end
@@ -18,6 +20,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
   self.session = [[UserSession alloc]initWithUser:nil token:[UserDefaults activeToken]];
+
+  UIViewController __block *viewController = nil;
+  UIStoryboard  *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+  [[ConnectionManager sharedInstance] pingWithToken:self.session.token completionHandler:^(NSDate *date, User *user, NSError *error) {
+    if (!user.email) {
+      viewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    } else {
+      viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainUserViewController"];
+    }
+
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+  }];
+
   return YES;
 }
 

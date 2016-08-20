@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -462,7 +462,8 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f15-dX-TKi">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <string key="text">Czy jesteś pewien  że chcesz zapisać się na listę osóbbiorących udział w losowaniu karty parkingowej?</string>
+                                <string key="text">Czy jesteś pewien  że chcesz zapisać się na listę osób
+biorących udział w losowaniu karty parkingowej?</string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -513,19 +514,19 @@
                                 <exclude reference="KhS-vM-mYT"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="59G-93-XNd"/>
-                                <exclude reference="lLy-JT-bRM"/>
-                                <exclude reference="XvM-Bv-ySF"/>
-                                <exclude reference="iYa-uy-xkO"/>
-                                <exclude reference="ob5-xK-KCK"/>
+                                <exclude reference="ekY-zi-ca8"/>
+                                <exclude reference="xcN-n2-sNC"/>
+                                <exclude reference="sXg-kG-yhu"/>
+                                <exclude reference="0c0-Xe-emE"/>
                                 <exclude reference="FFv-Al-tgn"/>
                                 <exclude reference="YIp-hW-sEN"/>
                                 <exclude reference="4Cj-1K-EYF"/>
                                 <exclude reference="ulZ-G1-4b8"/>
-                                <exclude reference="sXg-kG-yhu"/>
-                                <exclude reference="ekY-zi-ca8"/>
-                                <exclude reference="xcN-n2-sNC"/>
-                                <exclude reference="0c0-Xe-emE"/>
+                                <exclude reference="XvM-Bv-ySF"/>
+                                <exclude reference="iYa-uy-xkO"/>
+                                <exclude reference="ob5-xK-KCK"/>
+                                <exclude reference="59G-93-XNd"/>
+                                <exclude reference="lLy-JT-bRM"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -538,19 +539,19 @@
                                 <include reference="KhS-vM-mYT"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="59G-93-XNd"/>
-                                <include reference="lLy-JT-bRM"/>
-                                <include reference="XvM-Bv-ySF"/>
-                                <include reference="iYa-uy-xkO"/>
-                                <include reference="ob5-xK-KCK"/>
+                                <include reference="ekY-zi-ca8"/>
+                                <include reference="xcN-n2-sNC"/>
+                                <include reference="sXg-kG-yhu"/>
+                                <include reference="0c0-Xe-emE"/>
                                 <include reference="FFv-Al-tgn"/>
                                 <include reference="YIp-hW-sEN"/>
                                 <include reference="4Cj-1K-EYF"/>
                                 <include reference="ulZ-G1-4b8"/>
-                                <include reference="sXg-kG-yhu"/>
-                                <include reference="ekY-zi-ca8"/>
-                                <include reference="xcN-n2-sNC"/>
-                                <include reference="0c0-Xe-emE"/>
+                                <include reference="XvM-Bv-ySF"/>
+                                <include reference="iYa-uy-xkO"/>
+                                <include reference="ob5-xK-KCK"/>
+                                <include reference="59G-93-XNd"/>
+                                <include reference="lLy-JT-bRM"/>
                             </mask>
                         </variation>
                     </view>
