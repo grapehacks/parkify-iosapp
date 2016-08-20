@@ -12,6 +12,8 @@
 #import "User.h"
 #import "Message.h"
 #import "Card.h"
+#import "Draw.h"
+#import "History.h"
 
 @implementation JSONParser
 
@@ -62,6 +64,29 @@
   card.active = [jsonDictionary[@"active"] boolValue];
   card.user = [self userFromDictionary:jsonDictionary[@"user"]];
   return card;
+}
+
+- (Draw *)drawFromDictionary:(NSDictionary *)jsonDictionary {
+  Draw *draw = [Draw new];
+  draw.user = [self userFromDictionary:jsonDictionary[@"user"]];
+  draw.card = [self cardFromDictionary:jsonDictionary[@"card"]];
+  return draw;
+}
+
+- (History *)historyFromDictionary:(NSDictionary *)jsonDictionary {
+  History *history = [History new];
+  history.date = [self dateFromDictionary:jsonDictionary[@"date"]];
+  history.draw = [self drawFromDictionary:jsonDictionary[@"draw"]];
+  history.user = [self userFromDictionary:jsonDictionary[@"user"]];
+  return history;
+}
+
+- (History *)historyFromDictionary:(NSDictionary *)jsonDictionary {
+    History *history = [History new];
+    history.date = [self dateFromDictionary:jsonDictionary[@"date"]];
+    history.draw = [self drawFromDictionary:jsonDictionary[@"draw"]];
+    history.user = [self userFromDictionary:jsonDictionary[@"user"]];
+    return history;
 }
 
 - (NSDate *)dateFromDictionary:(NSDictionary *)dateDictionary {
