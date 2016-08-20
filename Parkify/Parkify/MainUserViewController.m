@@ -45,6 +45,14 @@
     
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[topBar]-|" options:0 metrics:nil views:views]];
     [self.topBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[topBar]-|" options:0 metrics:nil views:views]];
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(respondToTapGesture:)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:tapRecognizer];
 }
 
+-(void)respondToTapGesture:(UITapGestureRecognizer *)recognizer {
+    if (self.topBarViewController.popupView) {
+        [self.topBarViewController.popupView removeFromSuperview];
+    }
+}
 @end

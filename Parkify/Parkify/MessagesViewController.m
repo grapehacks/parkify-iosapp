@@ -40,6 +40,15 @@
             self.messagesArray = messages;
         }
     }];
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(respondToTapGesture:)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:tapRecognizer];
+}
+
+-(void)respondToTapGesture:(UITapGestureRecognizer *)recognizer {
+    if (self.topBarViewController.popupView) {
+        [self.topBarViewController.popupView removeFromSuperview];
+    }
 }
 
 #pragma mark - Table View Data Source

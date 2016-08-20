@@ -11,7 +11,7 @@
 
 @interface TopBarViewController()
 @property (strong, nonatomic) IBOutlet UIView *popUpBackgroundView;
-@property (strong, nonatomic) IBOutlet UIView *popupView;
+
 
 @end
 
