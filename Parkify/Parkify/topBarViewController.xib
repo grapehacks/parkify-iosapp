@@ -10,6 +10,8 @@
                 <outlet property="counterLabel" destination="5O0-2e-QPD" id="FDu-Zx-9iE"/>
                 <outlet property="infoButton" destination="uKG-uh-ma8" id="Eie-d2-ch0"/>
                 <outlet property="personButton" destination="tle-26-Gei" id="tZ0-x0-zeb"/>
+                <outlet property="popUpBackgroundView" destination="dit-lo-qNf" id="yW4-st-0Zk"/>
+                <outlet property="popupView" destination="OqO-B7-6DN" id="iC8-1u-FIy"/>
                 <outlet property="view" destination="iN0-l3-epB" id="utX-nU-8ga"/>
                 <outlet property="winnersButton" destination="GK5-sx-hY4" id="g84-yR-1fb"/>
             </connections>
@@ -32,7 +34,7 @@
                     </variation>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK5-sx-hY4">
-                    <rect key="frame" x="484" y="8" width="50" height="50"/>
+                    <rect key="frame" x="480" y="8" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="UIG-v0-QBJ"/>
                         <constraint firstAttribute="width" constant="50" id="ZKH-vO-DHD"/>
@@ -43,7 +45,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tle-26-Gei">
-                    <rect key="frame" x="544" y="10" width="50" height="50"/>
+                    <rect key="frame" x="540" y="10" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="7wg-Nu-4h2"/>
                         <constraint firstAttribute="width" constant="50" id="bBn-e9-wLW"/>
@@ -129,7 +131,7 @@
                 <constraint firstItem="GK5-sx-hY4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Bkm-jH-5QI"/>
                 <constraint firstItem="MhL-Gn-nqt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="IGq-En-nlr"/>
                 <constraint firstItem="3XT-9m-vjk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="JPK-Sd-q1G"/>
-                <constraint firstItem="WfV-mm-TXw" firstAttribute="leading" secondItem="tle-26-Gei" secondAttribute="trailing" constant="10" id="QAh-z9-ZsP"/>
+                <constraint firstItem="WfV-mm-TXw" firstAttribute="leading" secondItem="tle-26-Gei" secondAttribute="trailing" constant="14" id="QAh-z9-ZsP"/>
                 <constraint firstItem="tle-26-Gei" firstAttribute="leading" secondItem="GK5-sx-hY4" secondAttribute="trailing" constant="10" id="QFt-VC-JkF"/>
                 <constraint firstItem="WfV-mm-TXw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Z0k-YD-hDW"/>
                 <constraint firstItem="3XT-9m-vjk" firstAttribute="top" secondItem="MhL-Gn-nqt" secondAttribute="bottom" constant="20" id="cnh-EQ-U7G"/>
@@ -144,8 +146,40 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="426" y="-225.5"/>
         </view>
+        <view contentMode="scaleToFill" id="OqO-B7-6DN">
+            <rect key="frame" x="0.0" y="0.0" width="235" height="145"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="kH9-mR-N9n">
+                    <rect key="frame" x="165" y="0.0" width="40" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="5Jk-Td-F7s"/>
+                        <constraint firstAttribute="height" constant="19" id="Acj-PE-Nlk"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dit-lo-qNf">
+                    <rect key="frame" x="0.0" y="19" width="235" height="126"/>
+                    <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="dit-lo-qNf" firstAttribute="leading" secondItem="OqO-B7-6DN" secondAttribute="leading" id="2yu-ah-NLs"/>
+                <constraint firstAttribute="trailing" secondItem="kH9-mR-N9n" secondAttribute="trailing" constant="30" id="JpY-r4-5DO"/>
+                <constraint firstAttribute="trailing" secondItem="dit-lo-qNf" secondAttribute="trailing" id="WYb-sL-4hc"/>
+                <constraint firstItem="dit-lo-qNf" firstAttribute="top" secondItem="kH9-mR-N9n" secondAttribute="bottom" id="pOQ-lF-R5x"/>
+                <constraint firstAttribute="bottom" secondItem="dit-lo-qNf" secondAttribute="bottom" id="phi-nT-VLh"/>
+                <constraint firstItem="kH9-mR-N9n" firstAttribute="top" secondItem="OqO-B7-6DN" secondAttribute="top" id="xoh-lS-RZz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="304.5" y="-53.5"/>
+        </view>
     </objects>
     <resources>
+        <image name="arrow" width="74" height="36"/>
         <image name="badge" width="16" height="16"/>
         <image name="boy" width="19" height="29"/>
         <image name="info" width="31" height="31"/>
