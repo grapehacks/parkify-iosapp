@@ -8,11 +8,13 @@
 
 #import "ConnectionManager.h"
 #import "AFNetworking.h"
+#import "JSONParser.h"
 
 static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
 
 @interface ConnectionManager ()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) JSONParser *parser;
 @end
 
 @implementation ConnectionManager
@@ -22,6 +24,7 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
   self = [super init];
   if (self) {
     _manager = [AFHTTPSessionManager manager];
+    _parser = [JSONParser new];
   }
   return self;
 }
@@ -36,15 +39,16 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
 }
 
 
-- (void)authenticateWithLogin:(NSString *)login password:(NSString *)passwd completionHandler:(void (^)(NSString *token, NSString *userString, NSError *error))completion {
+- (void)authenticateWithLogin:(NSString *)login password:(NSString *)passwd completionHandler:(void (^)(NSString *token, User *user, NSError *error))completion {
   NSString *endpointURL = [NSString stringWithFormat:@"%@authenticate", BaseURLString];
   NSDictionary *params = @{@"email" : login,
                            @"password" : passwd
                            };
 
   [self.manager POST:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    User *user = [self.parser userFromDictionary:[responseObject objectForKey:@"user"]];
     if (completion) {
-      completion([responseObject objectForKey:@"token"],[responseObject objectForKey:@"user"], nil);
+      completion([responseObject objectForKey:@"token"], user, nil);
     }
   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     NSLog(@"auth error: %@", error);
@@ -54,7 +58,7 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
   }];
 }
 
-- (void)pingWithToken:(NSString *)token completionHandler:(void (^)(NSString *dateString, NSString *userString, NSError *error))completion {
+- (void)pingWithToken:(NSString *)token completionHandler:(void (^)(NSDate *date, User *user, NSError *error))completion {
   NSString *endpointURL = [NSString stringWithFormat:@"%@ping", BaseURLString];
   NSDictionary *params = nil;
   if (token) {
@@ -63,8 +67,11 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
 
   [self.manager GET:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     NSLog(@"ping response %@", responseObject);
+    User *user = [self.parser userFromDictionary:[responseObject objectForKey:@"user"]];
+    NSDate *date = [self.parser objectOfType:[NSDate class] fromJSONString:[responseObject objectForKey:@"date"]];
+
     if (completion) {
-      completion([responseObject objectForKey:@"date"], [responseObject objectForKey:@"user"], nil);
+      completion(date, user, nil);
     }
   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     NSLog(@"ping error %@", error);

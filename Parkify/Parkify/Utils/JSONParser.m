@@ -9,7 +9,6 @@
 #import "JSONParser.h"
 
 // model objects class
-#import "User.h"
 #import "Message.h"
 #import "Card.h"
 #import "Draw.h"
@@ -26,11 +25,17 @@
 
 - (id)objectOfType:(Class)objectType fromJSONString:(NSString *)jsonString {
   NSDictionary *jsonDictionry = [self dictionaryFronJSonString:jsonString];
+
   if (objectType == [NSDate class]) {
     return [self dateFromDictionary:jsonDictionry];
-    // I don't know
   } else if (objectType == [User class]) {
     return [self userFromDictionary:jsonDictionry];
+  } else if (objectType == [Message class]) {
+    return [self messageFromDictionary:jsonDictionry];
+  } else if (objectType == [Card class]) {
+    return [self cardFromDictionary:jsonDictionry];
+  } else if (objectType == [Draw class]) {
+    return [self drawFromDictionary:jsonDictionry];
   }
   return nil;
 }
@@ -72,14 +77,14 @@
   draw.card = [self cardFromDictionary:jsonDictionary[@"card"]];
   return draw;
 }
-
-- (History *)historyFromDictionary:(NSDictionary *)jsonDictionary {
-  History *history = [History new];
-  history.date = [self dateFromDictionary:jsonDictionary[@"date"]];
-  history.draw = [self drawFromDictionary:jsonDictionary[@"draw"]];
-  history.user = [self userFromDictionary:jsonDictionary[@"user"]];
-  return history;
-}
+//
+//- (History *)historyFromDictionary:(NSDictionary *)jsonDictionary {
+//  History *history = [History new];
+//  history.date = [self dateFromDictionary:jsonDictionary[@"date"]];
+//  history.draw = [self drawFromDictionary:jsonDictionary[@"draw"]];
+//  history.user = [self userFromDictionary:jsonDictionary[@"user"]];
+//  return history;
+//}
 
 
 - (NSDate *)dateFromDictionary:(NSDictionary *)dateDictionary {

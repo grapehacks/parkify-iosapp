@@ -44,9 +44,8 @@
 - (IBAction)loginAction:(id)sender {
   [[ConnectionManager sharedInstance] authenticateWithLogin:self.userNameTextField.text
                                                    password:self.passwordTextField.text
-                                          completionHandler:^(NSString *token, NSString *userString, NSError *error) {
+                                          completionHandler:^(NSString *token, User *user, NSError *error) {
                                             if (!error) {
-
                                               UserSession *session = [[UserSession alloc] initWithUser:user token:token];
                                               AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
                                               appDelegate.session = session;

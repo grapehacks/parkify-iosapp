@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface ConnectionManager : NSObject
 
 + (instancetype)sharedInstance;
 
-- (void)authenticateWithLogin:(NSString *)login password:(NSString *)passwd completionHandler:(void (^)(NSString *token, NSString *userString, NSError *error))completion;
-- (void)pingWithToken:(NSString *)token completionHandler:(void (^)(NSString *dateString, NSString *userString, NSError *error))completion;
+- (void)authenticateWithLogin:(NSString *)login password:(NSString *)passwd completionHandler:(void (^)(NSString *token, User *user, NSError *error))completion;
+- (void)pingWithToken:(NSString *)token completionHandler:(void (^)(NSDate *date, User *user, NSError *error))completion;
 - (void)retrieveUsersWithToken:(NSString *)token completionHandler:(void (^)(NSArray *users, NSError *error))completion;
 - (void)retrieveCardsWithToken:(NSString *)token completionHandler:(void (^)(NSArray *cards, NSError *error))completion;
 @end

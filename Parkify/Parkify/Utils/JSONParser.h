@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface JSONParser : NSObject
 
+- (id)objectOfType:(Class)objectType fromJSONString:(NSString *)jsonString;
+- (User *)userFromDictionary:(NSDictionary *)jsonDictionary;
 @end
