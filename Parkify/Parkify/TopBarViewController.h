@@ -14,5 +14,5 @@
 @property (strong, nonatomic) IBOutlet UIButton *personButton;
 @property (strong, nonatomic) IBOutlet UIButton *infoButton;
 @property (strong, nonatomic) IBOutlet UILabel *counterLabel;
-
+@property (strong, nonatomic) IBOutlet UIView *popupView;
 @end
