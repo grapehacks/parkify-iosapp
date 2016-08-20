@@ -14,6 +14,7 @@
 		7DB06D4D1D67787F00164215 /* Parkify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DB06D4B1D67787F00164215 /* Parkify.xcdatamodeld */; };
 		7DB06D4F1D67787F00164215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB06D4E1D67787F00164215 /* Assets.xcassets */; };
 		7DB06D521D67787F00164215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB06D501D67787F00164215 /* LaunchScreen.storyboard */; };
+		7DF379531D67AF240021FBC3 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF379521D67AF240021FBC3 /* ConnectionManager.m */; };
 		9C599C939FF75DD8C6FFBCED /* Pods_Parkify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FBEBFCAB0929FDDB9A56A5 /* Pods_Parkify.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,8 @@
 		7DB06D4E1D67787F00164215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB06D511D67787F00164215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB06D531D67787F00164215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DF379511D67AF240021FBC3 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
+		7DF379521D67AF240021FBC3 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
 		C982519C928745C3DDD3799E /* Pods-Parkify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parkify/Pods-Parkify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +79,7 @@
 		7DB06D3E1D67787F00164215 /* Parkify */ = {
 			isa = PBXGroup;
 			children = (
+				7DF379501D67AECA0021FBC3 /* Managers */,
 				7DB06D421D67787F00164215 /* AppDelegate.h */,
 				7DB06D431D67787F00164215 /* AppDelegate.m */,
 				7DB06D451D67787F00164215 /* ViewController.h */,
@@ -96,6 +100,15 @@
 				7DB06D401D67787F00164215 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DF379501D67AECA0021FBC3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7DF379511D67AF240021FBC3 /* ConnectionManager.h */,
+				7DF379521D67AF240021FBC3 /* ConnectionManager.m */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C0AA3136593935143626DCDF /* Frameworks */ = {
@@ -229,6 +242,7 @@
 			files = (
 				7DB06D471D67787F00164215 /* ViewController.m in Sources */,
 				7DB06D441D67787F00164215 /* AppDelegate.m in Sources */,
+				7DF379531D67AF240021FBC3 /* ConnectionManager.m in Sources */,
 				7DB06D4D1D67787F00164215 /* Parkify.xcdatamodeld in Sources */,
 				7DB06D411D67787F00164215 /* main.m in Sources */,
 			);
