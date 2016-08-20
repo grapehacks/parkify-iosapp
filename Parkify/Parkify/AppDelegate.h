@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "UserSession.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,6 +22,7 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+@property (nonatomic, strong) UserSession *session;
 
 @end
 

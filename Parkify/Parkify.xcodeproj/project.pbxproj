@@ -19,6 +19,7 @@
 		7DF379481D67983A0021FBC3 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF379471D67983A0021FBC3 /* Message.m */; };
 		7DF3794F1D679F7A0021FBC3 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3794E1D679F7A0021FBC3 /* JSONParser.m */; };
 		7DF379531D67AF240021FBC3 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF379521D67AF240021FBC3 /* ConnectionManager.m */; };
+		7DF379561D67DE4C0021FBC3 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF379551D67DE4C0021FBC3 /* UserSession.m */; };
 		845B0F671D67A7ED00AB6627 /* topBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845B0F661D67A7ED00AB6627 /* topBarViewController.xib */; };
 		845B0F741D67AFFB00AB6627 /* MainUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845B0F731D67AFFB00AB6627 /* MainUserViewController.m */; };
 		845B0F771D67B06B00AB6627 /* TopBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845B0F761D67B06B00AB6627 /* TopBarViewController.m */; };
@@ -50,6 +51,8 @@
 		7DF3794E1D679F7A0021FBC3 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		7DF379511D67AF240021FBC3 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
 		7DF379521D67AF240021FBC3 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		7DF379541D67DE4C0021FBC3 /* UserSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSession.h; sourceTree = "<group>"; };
+		7DF379551D67DE4C0021FBC3 /* UserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
 		845B0F661D67A7ED00AB6627 /* topBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topBarViewController.xib; sourceTree = "<group>"; };
 		845B0F721D67AFFB00AB6627 /* MainUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUserViewController.h; sourceTree = "<group>"; };
 		845B0F731D67AFFB00AB6627 /* MainUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUserViewController.m; sourceTree = "<group>"; };
@@ -132,15 +135,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7DF379501D67AECA0021FBC3 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				7DF379511D67AF240021FBC3 /* ConnectionManager.h */,
-				7DF379521D67AF240021FBC3 /* ConnectionManager.m */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		7DB06D591D678C7A00164215 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +144,8 @@
 				7DF379441D67937C0021FBC3 /* User.m */,
 				7DF379461D67983A0021FBC3 /* Message.h */,
 				7DF379471D67983A0021FBC3 /* Message.m */,
+				7DF379541D67DE4C0021FBC3 /* UserSession.h */,
+				7DF379551D67DE4C0021FBC3 /* UserSession.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +157,15 @@
 				7DF3794E1D679F7A0021FBC3 /* JSONParser.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7DF379501D67AECA0021FBC3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7DF379511D67AF240021FBC3 /* ConnectionManager.h */,
+				7DF379521D67AF240021FBC3 /* ConnectionManager.m */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C0AA3136593935143626DCDF /* Frameworks */ = {
@@ -301,6 +306,7 @@
 				845B0F741D67AFFB00AB6627 /* MainUserViewController.m in Sources */,
 				7DB06D441D67787F00164215 /* AppDelegate.m in Sources */,
 				7DF379531D67AF240021FBC3 /* ConnectionManager.m in Sources */,
+				7DF379561D67DE4C0021FBC3 /* UserSession.m in Sources */,
 				7DB06D4D1D67787F00164215 /* Parkify.xcdatamodeld in Sources */,
 				7DF3794F1D679F7A0021FBC3 /* JSONParser.m in Sources */,
 				845B0F771D67B06B00AB6627 /* TopBarViewController.m in Sources */,

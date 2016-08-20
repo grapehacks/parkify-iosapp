@@ -7,10 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ConnectionManager.h"
 
 @interface AppDelegate ()
-@property (nonatomic, strong) NSString *token;
 @end
 
 @implementation AppDelegate
@@ -19,29 +17,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
 
+// load 
 
-  //test code
-  NSString *login = @"curryfoster@anixang.com";
-  NSString *password = @"Kendra";
-
-  ConnectionManager *connManager = [ConnectionManager new];
-
-  [connManager authenticateWithLogin:login password:password completionHandler:^(NSString *token, NSString *userString, NSError *error) {
-    NSLog(@"authentication completion");
-    self.token = token;
-  }];
-
-  [connManager pingWithToken:self.token completionHandler:^(NSString *dateString, NSString *userString, NSError *error) {
-    NSLog(@"ping completion");
-  }];
-
-  [connManager retrieveUsersWithToken:self.token completionHandler:^(NSArray *users, NSError *error) {
-    NSLog(@"retrieve users completion");
-  }];
-
-  [connManager retrieveCardsWithToken:self.token completionHandler:^(NSArray *cards, NSError *error) {
-    NSLog(@"retrieve cards completion");
-  }];
+//  //test code
+//  NSString *login = @"curryfoster@anixang.com";
+//  NSString *password = @"Kendra";
+//
+//  ConnectionManager *connManager = [ConnectionManager new];
+//
+//  [connManager authenticateWithLogin:login password:password completionHandler:^(NSString *token, NSString *userString, NSError *error) {
+//    NSLog(@"authentication completion");
+//    self.token = token;
+//  }];
+//
+//  [connManager pingWithToken:self.token completionHandler:^(NSString *dateString, NSString *userString, NSError *error) {
+//    NSLog(@"ping completion");
+//  }];
+//
+//  [connManager retrieveUsersWithToken:self.token completionHandler:^(NSArray *users, NSError *error) {
+//    NSLog(@"retrieve users completion");
+//  }];
+//
+//  [connManager retrieveCardsWithToken:self.token completionHandler:^(NSArray *cards, NSError *error) {
+//    NSLog(@"retrieve cards completion");
+//  }];
 
   return YES;
 }

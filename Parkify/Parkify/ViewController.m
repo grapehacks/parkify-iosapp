@@ -6,8 +6,12 @@
 //  Copyright © 2016 Sławek Derwisz. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "ViewController.h"
 #import "MainUserViewController.h"
+#import "ConnectionManager.h"
+
+@class UserSession;
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIView *footerView;
@@ -38,13 +42,33 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    BOOL userCanLogin = YES; //should be modify
-    if (userCanLogin) {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *mainUserViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MainUserViewController"];
-        mainUserViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [self presentViewController:mainUserViewController animated:YES completion:NULL];
-    }
+  [[ConnectionManager sharedInstance] authenticateWithLogin:self.userNameTextField.text
+                                                   password:self.passwordTextField.text
+                                          completionHandler:^(NSString *token, NSString *userString, NSError *error) {
+                                            if (!error) {
+
+                                              UserSession *session = [[UserSession alloc] initWithUser:user token:token];
+                                              AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                                              appDelegate.session = session;
+
+                                              UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                              UIViewController *mainUserViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MainUserViewController"];
+                                              mainUserViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+                                              [self presentViewController:mainUserViewController animated:YES completion:NULL];
+                                            } else {
+                                              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login error"
+                                                                                                             message:error.localizedDescription
+                                                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+                                              UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                                                      style:UIAlertActionStyleDefault
+                                                                                                    handler:^(UIAlertAction * action) {}];
+                                              [alert addAction:defaultAction];
+                                              [self presentViewController:alert animated:YES completion:^{
+                                                self.userNameTextField.text = @"";
+                                                self.passwordTextField.text = @"";
+                                              }];
+                                            }
+  }];
 }
 
 @end

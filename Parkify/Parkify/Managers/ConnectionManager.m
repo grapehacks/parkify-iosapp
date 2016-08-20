@@ -26,6 +26,16 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
   return self;
 }
 
++ (instancetype)sharedInstance {
+  static ConnectionManager *instance = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    instance = [self new];
+  });
+  return instance;
+}
+
+
 - (void)authenticateWithLogin:(NSString *)login password:(NSString *)passwd completionHandler:(void (^)(NSString *token, NSString *userString, NSError *error))completion {
   NSString *endpointURL = [NSString stringWithFormat:@"%@authenticate", BaseURLString];
   NSDictionary *params = @{@"email" : login,
