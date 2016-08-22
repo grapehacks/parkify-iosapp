@@ -9,6 +9,8 @@
 #import "MainUserViewController.h"
 #import "TopBarViewController.h"
 #import "MessagesViewController.h"
+#import "ConfirmationModalViewController.h"
+#import "AppDelegate.h"
 
 @interface MainUserViewController ()
 @property (strong, nonatomic) IBOutlet UIView *topBarView;
@@ -17,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *refreshButton;
 @property (strong, nonatomic) IBOutlet UIButton *saveUnsaveButton;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) ConfirmationModalViewController *confirmationModalViewController;
 
 @property (strong, nonatomic) TopBarViewController *topBarViewController;
 @end
@@ -55,4 +58,50 @@
         [self.topBarViewController.popupView removeFromSuperview];
     }
 }
+-(void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  switch ([self participateMode]) {
+    case ParticipateModeDecline:
+    case ParticipateModeTentative:
+      [self setupForUnregisteredUser];
+      break;
+    case ParticipateModeAccept:
+      [self setupForRegisteredUser];
+  }
+}
+
+- (ParticipateMode)participateMode {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return appDelegate.session.user.participate;
+}
+
+- (IBAction)registerUnregisterAction:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.confirmationModalViewController = [storyBoard instantiateViewControllerWithIdentifier:@"ConfirmationModalViewController"];
+    self.confirmationModalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    switch ([self participateMode]) {
+        case ParticipateModeDecline:
+        case ParticipateModeTentative:
+            [self.confirmationModalViewController registerConfirmation];
+        break;
+        case ParticipateModeAccept:
+            [self.confirmationModalViewController unregisterConfirmation];
+    }
+    
+    [self presentViewController:self.confirmationModalViewController animated:YES completion:NULL];
+}
+
+- (void)setupForRegisteredUser {
+    [self.enableButton setImage:[UIImage imageNamed:@"onState"] forState:UIControlStateNormal];
+    [self.saveUnsaveButton setBackgroundImage:[UIImage imageNamed:@"greenButton"] forState:UIControlStateNormal];
+    [self.saveUnsaveButton setTitle:@"ZAPISANO" forState:UIControlStateNormal];
+}
+
+- (void)setupForUnregisteredUser {
+    [self.enableButton setImage:[UIImage imageNamed:@"offState"] forState:UIControlStateNormal];
+    [self.saveUnsaveButton setBackgroundImage:[UIImage imageNamed:@"redButton"] forState:UIControlStateNormal];
+    [self.saveUnsaveButton setTitle:@"NIE ZAPISANO" forState:UIControlStateNormal];
+}
+
 @end
