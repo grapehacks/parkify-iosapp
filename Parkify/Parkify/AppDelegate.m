@@ -30,9 +30,9 @@
       if (date) {
         self.session.drawDate = date;
       }
-      self.session.user = user;
       viewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     } else {
+      self.session.user = user;
       viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainUserViewController"];
     }
 

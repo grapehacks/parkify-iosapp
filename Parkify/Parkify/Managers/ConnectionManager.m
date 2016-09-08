@@ -68,13 +68,13 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
   [self.manager GET:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     NSLog(@"ping response %@", responseObject);
     NSDictionary *userDictionary = [responseObject objectForKey:@"user"];
-    NSDictionary *dateString = [responseObject objectForKey:@"date"];
+    NSString *dateString = [responseObject objectForKey:@"date"];
     NSDate *date = nil;
     User *user = nil;
     if (dateString) {
-      date = [self.parser objectOfType:[NSDate class] fromJSONString:[responseObject objectForKey:@"date"]];
+      date = [self.parser objectOfType:[NSDate class] fromJSONString:dateString];
       if (userDictionary) {
-        user = [self.parser userFromDictionary:[responseObject objectForKey:@"user"]];
+        user = [self.parser userFromDictionary:userDictionary];
       }
     }
     
