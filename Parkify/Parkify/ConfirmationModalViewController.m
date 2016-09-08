@@ -42,21 +42,23 @@
   switch (appDelegate.session.user.participate) {
     case ParticipateModeDecline:
     case ParticipateModeTentative: {
-      [[ConnectionManager sharedInstance] participateRegisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:^(User *user, NSError *error) {
+      [[ConnectionManager sharedInstance] participateRegisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.isOn completionHandler:^(User *user, NSError *error) {
         appDelegate.session.user = user;
+        [self dismissViewControllerAnimated:YES completion:nil];
       }];
       break;
     }
     case ParticipateModeAccept: {
-      [[ConnectionManager sharedInstance] participateUnregisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.state completionHandler:^(User *user, NSError *error) {
+      [[ConnectionManager sharedInstance] participateUnregisterWithToken:appDelegate.session.token remember:self.confirmationSwitch.isOn completionHandler:^(User *user, NSError *error) {
         appDelegate.session.user = user;
+        [self dismissViewControllerAnimated:YES completion:nil];
       }];
       break;
     }
     default:
-      [self dismissViewControllerAnimated:YES completion:nil];
       break;
   }
+
 }
 
 - (IBAction)switchAction:(id)sender {

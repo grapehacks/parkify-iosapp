@@ -125,7 +125,7 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
                };
   }
   [self.manager POST:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-    User *user = [self.parser userFromDictionary:[responseObject objectForKey:@"user"]];
+    User *user = [self.parser userFromDictionary:responseObject];
     if (completion) {
       completion(user, nil);
     }
@@ -146,7 +146,7 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
                };
   }
   [self.manager POST:endpointURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-    User *user = [self.parser userFromDictionary:[responseObject objectForKey:@"user"]];
+    User *user = [self.parser userFromDictionary:responseObject];
     if (completion) {
       completion(user, nil);
     }
