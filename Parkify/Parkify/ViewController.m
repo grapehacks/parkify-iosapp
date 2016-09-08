@@ -14,7 +14,7 @@
 
 @class UserSession;
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UIView *footerView;
 @property (strong, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -35,6 +35,8 @@
     
     [self.footerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[container]-|" options:0 metrics:nil views:views]];
     [self.footerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[container]-|" options:0 metrics:nil views:views]];
+  self.userNameTextField.delegate = self;
+  self.passwordTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,6 +72,18 @@
                                               }];
                                             }
   }];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  if ([textField isEqual:self.userNameTextField]) {
+    [textField resignFirstResponder];
+    [self.passwordTextField becomeFirstResponder];
+  } else if ([textField isEqual:self.passwordTextField]) {
+    [self loginAction:self];
+  }
+  return YES;
 }
 
 @end
