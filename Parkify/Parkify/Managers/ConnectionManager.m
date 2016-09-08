@@ -157,37 +157,4 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
   }];
 }
 
-
-//- (void)retrieveUsersWithToken:(NSString *)token completionHandler:(void (^)(NSArray *users, NSError *error))completion {
-//  NSString *endpointURL = [NSString stringWithFormat:@"%@api/users", BaseURLString];
-//
-//  [self.manager GET:endpointURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//    NSLog(@"users response %@", responseObject);
-//    if (completion) {
-//      completion(responseObject, nil);
-//    }
-//  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//    NSLog(@"users error %@", error);
-//    if (completion) {
-//      completion(nil, error);
-//    }
-//  }];
-//}
-//
-//- (void)retrieveCardsWithToken:(NSString *)token completionHandler:(void (^)(NSArray *cards, NSError *error))completion {
-//  NSString *endpointURL = [NSString stringWithFormat:@"%@api/cards", BaseURLString];
-//
-//  [self.manager GET:endpointURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//    NSLog(@"cards response %@", responseObject);
-//    if (completion) {
-//      completion(responseObject, nil);
-//    }
-//  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//    NSLog(@"cards error %@", error);
-//    if (completion) {
-//      completion(nil, error);
-//    }
-//  }];
-//}
-
 @end
