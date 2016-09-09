@@ -42,7 +42,15 @@
     }];
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(respondToTapGesture:)];
     tapRecognizer.numberOfTapsRequired = 1;
+    UISwipeGestureRecognizer *gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeHandler:)];
+    gestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:gestureRecognizer];
     [self.view addGestureRecognizer:tapRecognizer];
+}
+
+
+- (void)swipeHandler:(UISwipeGestureRecognizer *)recognizer {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)respondToTapGesture:(UITapGestureRecognizer *)recognizer {

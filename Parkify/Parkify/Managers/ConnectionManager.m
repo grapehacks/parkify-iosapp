@@ -9,6 +9,7 @@
 #import "ConnectionManager.h"
 #import "AFNetworking.h"
 #import "JSONParser.h"
+#import "ParkifyNotification.h"
 
 static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
 
@@ -72,13 +73,15 @@ static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
     NSDate *date = nil;
     User *user = nil;
     if (dateString) {
-      date = [self.parser objectOfType:[NSDate class] fromJSONString:dateString];
+      date = [self.parser objectOfType:[NSDate class] fromJSONString:[responseObject objectForKey:@"date"]];
+        
       if (userDictionary) {
         user = [self.parser userFromDictionary:userDictionary];
       }
     }
     
-
+      
+    [[ParkifyNotification sharedInstance] setupNotificationForUser:user andDate:[self.parser dateFromString:[responseObject objectForKey:@"date"]]];
     if (completion) {
       completion(date, user, nil);
     }

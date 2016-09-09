@@ -15,4 +15,5 @@
 - (id)objectOfType:(Class)objectType fromJSONString:(NSString *)jsonString;
 - (User *)userFromDictionary:(NSDictionary *)jsonDictionary;
 - (Message *)messageFromDictionary:(NSDictionary *)jsonDictionary;
+- (NSDate *)dateFromString:(NSString *)dateString;
 @end

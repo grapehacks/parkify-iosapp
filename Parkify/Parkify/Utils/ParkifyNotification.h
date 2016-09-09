@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Message.h"
+#import "User.h"
 
 @interface ParkifyNotification : NSObject
 
-+ (void)sendNotificationForMessage:(Message *)message;
++ (instancetype)sharedInstance;
+- (void)setupNotificationForUser:(User *)user andDate:(NSDate *)date;
 
 @end

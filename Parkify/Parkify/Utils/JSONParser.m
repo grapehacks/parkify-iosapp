@@ -86,6 +86,18 @@
 //  return history;
 //}
 
+- (NSDate *)dateFromString:(NSString *)dateString {
+    if (dateString.length > 0) {
+        NSDateFormatter *dateFormatter = [NSDateFormatter new];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+        [dateFormatter setLocale:[NSLocale currentLocale]];
+        [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+        [dateFormatter setFormatterBehavior:NSDateFormatterBehaviorDefault];
+        NSDate *date = [dateFormatter dateFromString:dateString];
+        return date;
+    }
+    return nil;
+}
 
 - (NSDate *)dateFromDictionary:(NSDictionary *)dateDictionary {
   NSString *dateString = dateDictionary[@"date"];
