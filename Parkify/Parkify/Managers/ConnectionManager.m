@@ -11,7 +11,7 @@
 #import "JSONParser.h"
 #import "ParkifyNotification.h"
 
-static NSString const *BaseURLString = @"http://krk.grapeup.com:8080/";
+static NSString const *BaseURLString = @"http://parkify.grapeup.com/";
 
 @interface ConnectionManager ()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
